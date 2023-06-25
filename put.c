@@ -20,8 +20,8 @@ int _putchar(int c)
 
 int _puts(const char *s)
 {
-int i;
-
+	int i;
+	
 	i = 0;
 	while (s[i])
 	{
@@ -30,4 +30,3 @@ int i;
 	}
 	return (i);
 }
-
