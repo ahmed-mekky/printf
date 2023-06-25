@@ -25,7 +25,7 @@ int print_s(char *s)
 {
 	if (!s)
 	{
-		s = "(nil)";
+		s = "(null)";
 	}
 	return (_puts(s));
 }

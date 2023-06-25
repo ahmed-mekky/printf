@@ -32,11 +32,6 @@ int _printf(const char *format, ...)
 					break;
 				case '%':
 					t += print_ps();
-					while (format[i + 1] == '%')
-					{
-						t += print_ps();
-						i++;
-					}
 					break;
 				}
 			}
