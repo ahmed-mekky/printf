@@ -21,6 +21,11 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i])
+<<<<<<< HEAD
+=======
+			{
+			switch (format[i])
+>>>>>>> 22d9a37fcf7bacfe1846676cae8c4a8506f4da99
 			{
 				switch (format[i])
 				{
@@ -34,6 +39,7 @@ int _printf(const char *format, ...)
 					t += print_ps();
 					break;
 				}
+			}
 			}
 		}
 		else
