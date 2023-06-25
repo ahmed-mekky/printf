@@ -8,6 +8,10 @@
 
 int print_c(char c)
 {
+	if (!c)
+	{
+		c = '\0';
+	}
 	return (_putchar(c));
 }
 
@@ -19,6 +23,10 @@ int print_c(char c)
 
 int print_s(char *s)
 {
+	if (!s)
+	{
+		s = "(nil)";
+	}
 	return (_puts(s));
 }
 
