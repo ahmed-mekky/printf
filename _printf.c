@@ -7,20 +7,20 @@
  * Return: number of chars printed.
  */
 
-int _printf(const char *placeholder, ...)
+int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i, n = 0, t = 0;
 
-	while (placeholder[n])
+	while (format[n])
 		n++;
-	va_start(ap, placeholder);
+	va_start(ap, format);
 	for (i = 0; i < n; i++)
 	{
-		if (placeholder[i] == '%')
+		if (format[i] == '%')
 		{
 			i++;
-			switch (placeholder[i])
+			switch (format[i])
 			{
 			case 'c':
 				t += print_c((int)va_arg(ap, int));
@@ -35,10 +35,9 @@ int _printf(const char *placeholder, ...)
 		}
 		else
 		{
-			_putchar(placeholder[i]);
+			_putchar(format[i]);
 		}
 	}
 	va_end(ap);
 	return (t);
 }
-
