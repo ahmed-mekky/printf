@@ -20,17 +20,20 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			switch (format[i])
+			if (format[i])
 			{
-			case 'c':
-				t += print_c((int)va_arg(ap, int));
-				break;
-			case 's':
-				t += print_s(va_arg(ap, char *));
-				break;
-			case '%':
-				t += print_ps();
-				break;
+				switch (format[i])
+				{
+				case 'c':
+					t += print_c((int)va_arg(ap, int));
+					break;
+				case 's':
+					t += print_s(va_arg(ap, char *));
+					break;
+				case '%':
+					t += print_ps();
+					break;
+				}
 			}
 		}
 		else
