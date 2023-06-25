@@ -20,6 +20,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i])
+			{
 			switch (format[i])
 			{
 			case 'c':
@@ -31,6 +33,7 @@ int _printf(const char *format, ...)
 			case '%':
 				t += print_ps();
 				break;
+			}
 			}
 		}
 		else
