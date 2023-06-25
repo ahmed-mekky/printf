@@ -3,7 +3,7 @@
 
 /**
  * _printf - printf function
- * @placeholder: placeholder :)
+ * @format: placeholder :)
  * Return: number of chars printed.
  */
 
