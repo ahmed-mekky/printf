@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 /**
  * _printf - printf function
  * @format: placeholder :)
@@ -42,7 +41,7 @@ int _printf(const char *format, ...)
  */
 int _switcher(char c, va_list ap)
 {
-	int t;
+	int t = 0;
 
 	switch (c)
 	{
