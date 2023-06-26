@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i])
 			{
-				t += switcher(format[i], ap);
+				t += _switcher(format[i], ap);
 			}
 			else
 				return (-1);
@@ -34,8 +34,13 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	return (t);
 }
-
-int switcher(char c, va_list ap)
+/**
+ * _switcher - choose function to use
+ * @c: char
+ * @ap: va list
+ * Return: number of chars printed.
+ */
+int _switcher(char c, va_list ap)
 {
 	int t;
 

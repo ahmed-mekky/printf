@@ -7,7 +7,7 @@ int _puts(const char *s);
 int print_c(char c);
 int print_s(char *s);
 int print_ps(void);
-int switcher(char c,  va_list ap);
+int _switcher(char c,  va_list ap);
 
 
 #endif
