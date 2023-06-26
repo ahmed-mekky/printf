@@ -52,14 +52,12 @@ int print_d(int d)
 	if (d < 0)
 	{
 		str = malloc(sizeof(char) * size + 2);
-		if (!str)
-			return (-1);
 		flag = 1;
 	}
 	else
 		str = malloc(sizeof(char) * size + 1);
-		if (!str)
-			return (-1);
+	if (!str)
+		return (-1);
 	while (d)
 	{
 		str[i] = (abs(d) % 10) + '0';
@@ -74,7 +72,6 @@ int print_d(int d)
 		i--;
 		len += _putchar(str[i]);
 	}
-
 	free(str);
 	return (len);
 
