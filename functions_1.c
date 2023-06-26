@@ -29,3 +29,16 @@ int print_s(char *s)
 	}
 	return (_puts(s));
 }
+/**
+ * print_d - print a decimal
+ * @s: int to print
+ * Return: length of int
+ */
+int print_d(int s)
+{
+	if (!s)
+	{
+		s = '\0';
+	}
+	return(_puts(s));
+}

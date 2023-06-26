@@ -49,6 +49,8 @@ int _switcher(char c, va_list ap)
 		t += print_s(va_arg(ap, char *));
 	else if (c == '%')
 		t += print_c('%');
+	else if (c == 'd')
+		t += print_d(va_arg(ap, int));
 	else
 	{
 		t += print_c('%');
