@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#include "main.h"
+#include "../main.h"
 
 /**
  * main - Entry point
@@ -42,6 +42,8 @@ len = _printf("%c", 'S');
     printf("[%d]:[%d]\n",len, len2);
     len = _printf("%%");
     len2 = printf("%%");
+	_printf("Length:[%d, %i]\n", len, 0x55A);
+    printf("Length:[%d, %i]\n", len2, 0x55A55);
     printf("[%d]:[%d]\n",len, len2);
     len = _printf("%s%c%%%%%s%c\n", "string", 'S', "String",'s');
     len2 = printf("%s%c%%%%%s%c\n", "string", 'S', "String",'s');
