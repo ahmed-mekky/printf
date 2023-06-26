@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_c - print char
@@ -31,14 +32,38 @@ int print_s(char *s)
 }
 /**
  * print_d - print a decimal
- * @s: int to print
+ * @d: int to print
  * Return: length of int
  */
-int print_d(int s)
+int print_d(int d)
 {
-	if (!s)
+	char *str;
+	int i = 0, len = 0, size = 0;
+	int copy = d;
+
+	while (copy)
 	{
-		s = '\0';
+		size++;
+		copy /= 10;
 	}
-	return(_puts(s));
+	if (!size)
+		return (-1);
+
+	str = malloc(sizeof(char) * size + 1);
+	if (!str)
+		return (-1);
+
+	while (d)
+	{
+		str[i] = (d % 10) + '0';
+		d /= 10;
+		i++;
+	}
+	while (i > 0)
+	{
+		i--;
+		len += _putchar(str[i]);
+	}
+	return (len);
+
 }
