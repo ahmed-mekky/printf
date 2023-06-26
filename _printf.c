@@ -12,7 +12,6 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
-
 	while (format[n])
 		n++;
 	va_start(ap, format);
@@ -46,5 +45,6 @@ int _printf(const char *format, ...)
 			t += _putchar(format[i]);
 		i++;
 	}
-	va_end(ap), return (t);
+	va_end(ap);
+	return (t);
 }
