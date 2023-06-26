@@ -22,21 +22,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i])
 			{
-				switch (format[i])
-				{
-				case 'c':
-					t += print_c((int)va_arg(ap, int));
-					break;
-				case 's':
-					t += print_s(va_arg(ap, char *));
-					break;
-				case '%':
-					t += print_ps();
-					break;
-				default:
-					t += print_c('%');
-					t += print_c(format[i]);
-				}
+				t += switcher(format[i], ap);
 			}
 			else
 				return (-1);
@@ -46,5 +32,27 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
+	return (t);
+}
+
+int switcher(char c, va_list ap)
+{
+	int t;
+
+	switch (c)
+	{
+	case 'c':
+		t += print_c((int)va_arg(ap, int));
+		break;
+	case 's':
+		t += print_s(va_arg(ap, char *));
+		break;
+	case '%':
+		t += print_ps();
+		break;
+	default:
+		t += print_c('%');
+		t += print_c(c);
+	}
 	return (t);
 }
