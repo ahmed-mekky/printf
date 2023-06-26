@@ -5,15 +5,13 @@
  * @format: placeholder :)
  * Return: number of chars printed.
  */
-
 int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i = 0, n = 0, t = 0;
+
 	if (!format)
-	{
 		return (-1);
-	}
 
 	while (format[n])
 		n++;
@@ -42,16 +40,11 @@ int _printf(const char *format, ...)
 				}
 			}
 			else
-			{
 				return (-1);
-			}
 		}
 		else
-		{
 			t += _putchar(format[i]);
-		}
 		i++;
 	}
-	va_end(ap);
-	return (t);
+	va_end(ap), return (t);
 }
