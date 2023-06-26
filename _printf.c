@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdarg.h>
-
 /**
  * _printf - printf function
  * @format: placeholder :)
@@ -11,11 +10,16 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i = 0, n = 0, t = 0;
+	
+	if (!format)
+	{
+		return (-1);
+	}
 
 	while (format[n])
 		n++;
 	va_start(ap, format);
-	while (i < n && format[i] && format)
+	while (i < n)
 	{
 		if (format[i] == '%')
 		{
@@ -33,7 +37,14 @@ int _printf(const char *format, ...)
 				case '%':
 					t += print_ps();
 					break;
+				default:
+					t += print_c('%');
+					t += print_c(format[i]);
 				}
+			}
+			else
+			{
+				return (-1);
 			}
 		}
 		else
