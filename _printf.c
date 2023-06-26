@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i = 0, n = 0, t = 0;
-	
 	if (!format)
 	{
 		return (-1);
