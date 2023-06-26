@@ -47,8 +47,7 @@ int print_d(int d)
 		copy /= 10;
 	}
 	if (size == 0)
-		return (-1);
-
+		return (0);
 	if (d < 0)
 	{
 		str = malloc(sizeof(char) * size + 2);
@@ -74,5 +73,4 @@ int print_d(int d)
 	}
 	free(str);
 	return (len);
-
 }

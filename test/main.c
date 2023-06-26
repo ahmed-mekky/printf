@@ -42,8 +42,8 @@ len = _printf("%c", 'S');
     printf("[%d]:[%d]\n",len, len2);
     len = _printf("%%");
     len2 = printf("%%");
-	_printf("Length:[%d, %i]\n", len, 0x55A);
-    printf("Length:[%d, %i]\n", len2, 0x55A55);
+	_printf("Length:[%d, %i]\n", len, -0x544432234435A);
+    printf("Length:[%d, %i]\n", len2, -0x544432234435A);
     printf("[%d]:[%d]\n",len, len2);
     len = _printf("%s%c%%%%%s%c\n", "string", 'S', "String",'s');
     len2 = printf("%s%c%%%%%s%c\n", "string", 'S', "String",'s');
@@ -52,8 +52,8 @@ len = _printf("%c", 'S');
     len = _printf(str);
     printf("[%d]:[%d]\n",len, len2);
 
-    len2 = printf("%d", 123);
-    len = _printf("%d", 123);
+    len2 = printf("%d\n", 13773737375553737737323);
+    len = _printf("%d\n", 13773737375553737737323);
     printf("[%d]:[%d]\n",len, len2);
 
         return (0);
