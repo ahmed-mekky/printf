@@ -29,13 +29,16 @@ int print_s(char *s)
 	}
 	return (_puts(s));
 }
-
 /**
- * print_ps - print a percent sign
- *
- * Return: 1
+ * print_d - print a decimal
+ * @s: int to print
+ * Return: length of int
  */
-int print_ps(void)
+int print_d(int s)
 {
-	return (_putchar('%'));
+	if (!s)
+	{
+		s = '\0';
+	}
+	return(_puts(s));
 }

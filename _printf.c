@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
 /**
  * _printf - printf function
  * @format: placeholder :)
@@ -22,21 +21,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i])
 			{
-				switch (format[i])
-				{
-				case 'c':
-					t += print_c((int)va_arg(ap, int));
-					break;
-				case 's':
-					t += print_s(va_arg(ap, char *));
-					break;
-				case '%':
-					t += print_ps();
-					break;
-				default:
-					t += print_c('%');
-					t += print_c(format[i]);
-				}
+				t += _switcher(format[i], ap);
 			}
 			else
 				return (-1);
@@ -46,5 +31,30 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
+	return (t);
+}
+/**
+ * _switcher - choose function to use
+ * @c: char
+ * @ap: va list
+ * Return: number of chars printed.
+ */
+int _switcher(char c, va_list ap)
+{
+	int t = 0;
+
+	if (c == 'c')
+		t += print_c((int)va_arg(ap, int));
+	else if (c == 's')
+		t += print_s(va_arg(ap, char *));
+	else if (c == '%')
+		t += print_c('%');
+	else if (c == 'd')
+		t += print_d(va_arg(ap, int));
+	else
+	{
+		t += print_c('%');
+		t += print_c(c);
+	}
 	return (t);
 }
