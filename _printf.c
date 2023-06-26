@@ -43,18 +43,14 @@ int _switcher(char c, va_list ap)
 {
 	int t = 0;
 
-	switch (c)
-	{
-	case 'c':
+	if (c == 'c')
 		t += print_c((int)va_arg(ap, int));
-		break;
-	case 's':
+	else if (c == 's')
 		t += print_s(va_arg(ap, char *));
-		break;
-	case '%':
+	else if (c == '%')
 		t += print_c('%');
-		break;
-	default:
+	else
+	{
 		t += print_c('%');
 		t += print_c(c);
 	}
