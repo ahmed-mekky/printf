@@ -29,13 +29,3 @@ int print_s(char *s)
 	}
 	return (_puts(s));
 }
-
-/**
- * print_ps - print a percent sign
- *
- * Return: 1
- */
-int print_ps(void)
-{
-	return (_putchar('%'));
-}

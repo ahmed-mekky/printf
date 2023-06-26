@@ -51,6 +51,9 @@ int _switcher(char c, va_list ap)
 	case 's':
 		t += print_s(va_arg(ap, char *));
 		break;
+	case '%':
+		t += print_c('%');
+		break;
 	default:
 		t += print_c('%');
 		t += print_c(c);
