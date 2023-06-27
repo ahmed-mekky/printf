@@ -1,5 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
+#include <limits.h>
+int print_INTMIN(void);
 
 /**
  * print_c - print char
@@ -38,9 +40,10 @@ int print_s(char *s)
 int print_d(int d)
 {
 	char *str;
-	int i = 0, len = 0, size = 0, flag = 0;
-	int copy = abs(d);
+	int i = 0, len = 0, size = 0, flag = 0, copy = abs(d);
 
+	if (d == INT_MIN)
+		return (print_INTMIN());
 	if (d == 0)
 	{
 		_putchar('0');
@@ -77,4 +80,16 @@ int print_d(int d)
 	}
 	free(str);
 	return (len);
+}
+
+/**
+ * print_INTMIN - prints INT_MIN
+ *
+ * Return: lentgh of INT_MIN
+ */
+int print_INTMIN(void)
+{
+	char *str = "-2147483648";
+
+	return (_puts(str));
 }
