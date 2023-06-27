@@ -40,20 +40,17 @@ int print_d(int d)
 	char *str;
 	int i = 0, len = 0, size = 0, flag = 0;
 	int copy = abs(d);
-	
-     	if (d == 0)
-        {
-                _putchar('0');
-                return (1);
-        }
+
+	if (d == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (copy)
 	{
 		size++;
 		copy /= 10;
 	}
-	str = malloc(sizeof(char) * size + 2);
-	if (!str)
-		return (-1);
 	if (d < 0)
 	{
 		str = malloc(sizeof(char) * size + 2);
@@ -61,6 +58,8 @@ int print_d(int d)
 	}
 	else
 		str = malloc(sizeof(char) * size + 1);
+	if (!str)
+		return (-1);
 	while (d)
 	{
 		str[i] = (abs(d) % 10) + '0';
