@@ -37,6 +37,7 @@ int _printf(const char *format, ...)
 	va_end(ap);
 	if (error == -1)
 	{
+		error = 0;
 		return (-1);
 	}
 	return (t);
