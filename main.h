@@ -2,6 +2,8 @@
 #define MAIN_H
 #include <stdarg.h>
 
+extern int error;
+
 int _printf(const char *format, ...);
 int _putchar(int c);
 int _puts(const char *s);

@@ -1,4 +1,7 @@
 #include "main.h"
+
+int error;
+
 /**
  * _printf - printf function
  * @format: placeholder :)
@@ -8,6 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list ap;
 	int i = 0, n = 0, t = 0;
+	error = 0;
 
 	if (!format)
 		return (-1);
@@ -31,6 +35,10 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(ap);
+	if (error == -1)
+	{
+		return (-1);
+	}
 	return (t);
 }
 /**

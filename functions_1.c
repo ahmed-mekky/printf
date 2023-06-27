@@ -59,20 +59,21 @@ int print_d(int d)
 	else
 		str = malloc(sizeof(char) * size + 1);
 	if (!str)
+	{
+		error = -1;
 		return (-1);
+	}
 	while (d)
 	{
-		str[i] = (abs(d) % 10) + '0';
+		str[i++] = (abs(d) % 10) + '0';
 		d /= 10;
-		i++;
 	}
 	if (flag == 1)
 		str[i++] = '-';
 	str[i] = '\0';
 	while (i > 0)
 	{
-		i--;
-		len += _putchar(str[i]);
+		len += _putchar(str[--i]);
 	}
 	free(str);
 	return (len);
