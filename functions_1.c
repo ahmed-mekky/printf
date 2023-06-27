@@ -58,7 +58,7 @@ int print_d(int d)
 	}
 	else
 		str = malloc(sizeof(char) * size + 1);
-	if (!str)
+	if (str == NULL)
 	{
 		error = -1;
 		return (-1);
