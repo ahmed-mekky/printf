@@ -47,7 +47,13 @@ int print_d(int d)
 		copy /= 10;
 	}
 	if (size == 0)
-		return (0);
+	{
+		len += _putchar((d + '0'));
+		return (1);
+	}
+	str = malloc(sizeof(char) * size + 2);
+	if (!str)
+		return (-1);
 	if (d < 0)
 	{
 		str = malloc(sizeof(char) * size + 2);
@@ -55,8 +61,6 @@ int print_d(int d)
 	}
 	else
 		str = malloc(sizeof(char) * size + 1);
-	if (!str)
-		return (-1);
 	while (d)
 	{
 		str[i] = (abs(d) % 10) + '0';
